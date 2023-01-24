@@ -1,0 +1,80 @@
+-----------------------
+Run MySQL Container
+-----------------------
+docker run --name mysql --rm --network freshness -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=app -v mysql_vol:/app/mysql -d -p 3306:3306 mysql
+
+docker run --name mysql \
+--network freshness \
+--rm \ 
+-e MYSQL_ROOT_PASSWORD=1234 \
+-e MYSQL_DATABASE=app \
+-v mysql_vol:/app/mysql \
+-d \
+-p 3306:3306 \
+mysql
+
+
+-----------------------
+Make App_server Image
+-----------------------
+FROM python
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+RUN apt-get update
+RUN apt-get -y install libgl1-mesa-glx
+COPY . .
+EXPOSE 9000
+CMD ["python", "./app/server.py"]
+
+-----------------------
+Run App_server Container
+-----------------------
+docker run --name app_server --rm --network freshness -v C:\Users\meteo\Downloads\freshness_system\app_server\app:/app/app -d -p 9000:9000 app_server
+
+docker run --name app_server
+--network freshness
+-- rm 
+--name app_server
+-d 
+-p 9000:9000
+-v C:\Users\meteo\Downloads\freshness_system\app_server\app:/app/app
+app_server
+
+
+-----------------------
+Make client image
+-----------------------
+FROM python
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+RUN apt-get update
+RUN apt-get -y install libgl1-mesa-glx
+COPY . .
+EXPOSE 9000
+CMD ["python", "./app/server.py"]
+
+-----------------------
+Run Client Container
+-----------------------
+docker run -rm -p 
+
+
+-----------------------
+Make inference image
+-----------------------
+FROM python
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+RUN apt-get update
+RUN apt-get install -y libglib2.0-0 libsm6 libxrender1 libxext6
+COPY . .
+EXPOSE 8000
+CMD ["python", "server.py"]
+
+-----------------------
+Run Inference Container
+-----------------------
+docker run --network freshness --name inf -p 8000:8000 -v C:\Users\meteo\Downloads\freshness_system\model:/app inf_server

@@ -1,0 +1,9 @@
+__pycache__
+component/__pycache__
+pages/__pycache__
+
+component/secrets.json
+
+# 실행하면서 저장되는 이미지들
+temp_images
+qr_code
