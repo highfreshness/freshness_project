@@ -30,7 +30,7 @@ CMD ["python", "./app/server.py"]
 -----------------------
 Run App_server Container
 -----------------------
-docker run --name app_server --rm --network freshness -v C:\Users\meteo\Downloads\freshness_system\app_server\app:/app/app -d -p 9000:9000 app_server
+docker run --name app_server --rm --network freshness -v "%cd%":/app/app -d -p 9000:9000 app_server
 
 docker run --name app_server
 --network freshness
@@ -38,7 +38,7 @@ docker run --name app_server
 --name app_server
 -d 
 -p 9000:9000
--v C:\Users\meteo\Downloads\freshness_system\app_server\app:/app/app
+-v "%cd%":/app/app
 app_server
 
 
@@ -56,23 +56,24 @@ CMD ["streamlit", "run", "lilli_lilli.py"]
 -----------------------
 Run Client Container
 -----------------------
-docker run --rm -d -p 8501:8501 --name cli -v C:\Users\meteo\Downloads\freshness_system\client:/app client
+docker run --rm -d -p 8501:8501 --name cli -v "%cd%":/app client
 
 
 -----------------------
 Make inference image
 -----------------------
-FROM python
+FROM bitnami/pytorch
 WORKDIR /app
 COPY requirements.txt .
-RUN pip install -r requirements.txt
-RUN apt-get update
-RUN apt-get install -y libglib2.0-0 libsm6 libxrender1 libxext6
+RUN pip3 install -r requirements.txt
 COPY . .
 EXPOSE 8000
 CMD ["python", "server.py"]
 
+
 -----------------------
 Run Inference Container
 -----------------------
-docker run --network freshness --name inf -p 8000:8000 -v C:\Users\meteo\Downloads\freshness_system\model:/app inf_server
+docker run --network freshness --name inf -p 8000:8000 -v "%cd%":/app inf_server
+
+docker run -d --rm --name inf_server -v "%cd%":/app -p 8000:8000 inf_img
