@@ -85,3 +85,7 @@
 
     ![image-20230125091932043](C:\Users\meteo\AppData\Roaming\Typora\typora-user-images\image-20230125091932043.png)
 
+* 사용 방법
+  * docker-compose.yaml 이 존재하는 디렉토리 위치에서 `docker-compose up -d` 를 입력하면 서비스가 시작된다.
+  * localhost:[PORT]로 테스트가 가능하다. Client(8501), AP_SERVER(9000), MySQL(3306)로 설정이 되어있다.
+  * 종료는 `docker-compose down -v`을 통해 가능하며 컨테이너 생성 시 생성되었던 볼륨은 -v 옵션으로 서비스가 종료되며 같이 사라진다. 
