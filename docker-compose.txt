@@ -49,16 +49,14 @@ FROM python
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-RUN apt-get update
-RUN apt-get -y install libgl1-mesa-glx
 COPY . .
-EXPOSE 9000
-CMD ["python", "./app/server.py"]
+EXPOSE 8501
+CMD ["streamlit", "run", "lilli_lilli.py"]
 
 -----------------------
 Run Client Container
 -----------------------
-docker run -rm -p 
+docker run --rm -d -p 8501:8501 --name cli -v C:\Users\meteo\Downloads\freshness_system\client:/app client
 
 
 -----------------------

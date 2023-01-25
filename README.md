@@ -24,6 +24,8 @@
 
 * 배포 : AWS Lightsail
 
+* 컨테이너 : Docker
+
   
 
 ## 프로젝트 세부 소개
@@ -62,4 +64,24 @@
   * 현재 네이버 Clova OCR을 통해 OCR을 수행하지만 추후 비용 문제가 생길 수 있어 자체 OCR모델로 대체 필요
 
 
+
+---
+
+## Version 2.0(2023.01.25)
+
+* AS-IS
+
+  * AWS 제공 MySQL 사용
+
+  * AWS에 코드 직접 배포
+
+    ![image-20230125091733397](C:\Users\meteo\AppData\Roaming\Typora\typora-user-images\image-20230125091733397.png)
+
+* TO-BE
+
+  * MySQL, Ap 서버, Client 컨테이너화
+
+  * 컨테이너 오케스트레이션
+
+    ![image-20230125091932043](C:\Users\meteo\AppData\Roaming\Typora\typora-user-images\image-20230125091932043.png)
 

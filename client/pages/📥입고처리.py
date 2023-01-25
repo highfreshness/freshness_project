@@ -1,5 +1,8 @@
-from pathlib import Path
+# import os 
 import sys
+from pathlib import Path
+
+# os.environ['DISPLAY'] = ':0'
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 import streamlit as st
@@ -7,7 +10,7 @@ from webcam import webcam
 from datetime import datetime
 import requests
 import re
-import pyautogui
+# import pyautogui
 import qrcode
 
 from component.config import INFERENCE_SERVER_URL, AP_SERVER_URL
@@ -104,7 +107,7 @@ if len(barcode) == 13:
                     res = requests.post(url=STOCK, json=data)
                     print("입고 DB 전송 결과 :", res, res.text)
                     st.success(f' < 바코드번호 : {barcode} / {count} 개 > 등록되었습니다 ')
-                    pyautogui.press("f5", presses=1, interval=0.2)
+                    #pyautogui.press("f5", presses=1, interval=0.2)
                 
             # 직접 입력
             else :
@@ -138,7 +141,7 @@ if len(barcode) == 13:
                     res = requests.post(url=STOCK, json=data)
                     print("입고 DB 전송 결과 :", res, res.text)
                     st.success(f' < 바코드번호 : {barcode} / {count} 개 > 등록되었습니다 ')
-                    pyautogui.press("f5", presses=1, interval=0.2)
+                    #pyautogui.press("f5", presses=1, interval=0.2)
 
     # 외장 캠인 경우           
     else:
@@ -207,7 +210,7 @@ if len(barcode) == 13:
                     res = requests.post(url=STOCK, json=data)
                     print("입고 DB 전송 결과 :", res, res.text)
                     st.success(f' < 바코드번호 : {barcode} / {count} 개 > 등록되었습니다 ')
-                    pyautogui.press("f5", presses=1, interval=0.2)
+                    #pyautogui.press("f5", presses=1, interval=0.2)
 
             # 직접 입력
             else :
@@ -241,4 +244,4 @@ if len(barcode) == 13:
                     res = requests.post(url=STOCK, json=data)
                     print("입고 DB 전송 결과 :", res, res.text)
                     st.success(f' < 바코드번호 : {barcode} / {count} 개 > 등록되었습니다 ')
-                    pyautogui.press("f5", presses=1, interval=0.2)
+                    # pyautogui.press("f5", presses=1, interval=0.2)
