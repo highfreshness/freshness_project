@@ -24,7 +24,7 @@
 
 * 배포 : AWS Lightsail
 
-* 컨테이너 : Docker
+* 컨테이너 : Docker, Docker-Compose
 
   
 
@@ -77,15 +77,20 @@
 
     ![image-20230125091733397](C:\Users\meteo\AppData\Roaming\Typora\typora-user-images\image-20230125091733397.png)
 
+  
+
 * TO-BE
 
   * MySQL, Ap 서버, Client 컨테이너화
 
   * 컨테이너 오케스트레이션
 
-    ![image-20230125091932043](C:\Users\meteo\AppData\Roaming\Typora\typora-user-images\image-20230125091932043.png)
+    ![image-20230125230718205](C:\Users\meteo\AppData\Roaming\Typora\typora-user-images\image-20230125230718205.png)
+
+  
 
 * 사용 방법
-  * docker-compose.yaml 이 존재하는 디렉토리 위치에서 `docker-compose up -d` 를 입력하면 서비스가 시작된다.
-  * localhost:[PORT]로 테스트가 가능하다. Client(8501), AP_SERVER(9000), MySQL(3306)로 설정이 되어있다.
+  
+  * docker-compose.yaml이 존재하는 디렉토리 위치에서 `docker-compose up -d` 를 입력하면 서비스가 시작된다.
+  * localhost:[PORT]를 이용해 테스트가 가능하다. Client(8501), App(9000), Inference(8000), MySQL(3306)로 설정이 되어있다.
   * 종료는 `docker-compose down -v`을 통해 가능하며 컨테이너 생성 시 생성되었던 볼륨은 -v 옵션으로 서비스가 종료되며 같이 사라진다. 
