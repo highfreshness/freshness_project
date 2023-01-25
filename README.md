@@ -75,7 +75,7 @@
 
   * AWS에 코드 직접 배포
 
-    ![AS-IS](https://drive.google.com/uc?export=view&id=1ziHKFYWAye3kAcvpOo_unlmQPLF36p1V)
+    <img src=https://drive.google.com/uc?export=view&id=1ziHKFYWAye3kAcvpOo_unlmQPLF36p1V>
 
   
 
@@ -85,7 +85,7 @@
 
   * 컨테이너 오케스트레이션
 
-    ![TO-BE](https://drive.google.com/uc?export=view&id=14p6q3r0uR3fPL-XklHUe5a42pHHOOXDu)
+    <img src=https://drive.google.com/uc?export=view&id=14p6q3r0uR3fPL-XklHUe5a42pHHOOXDu>
 
   
 
