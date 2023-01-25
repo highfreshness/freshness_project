@@ -75,7 +75,7 @@
 
   * AWS에 코드 직접 배포
 
-    ![image-20230125091733397](C:\Users\meteo\AppData\Roaming\Typora\typora-user-images\image-20230125091733397.png)
+    ![AS-IS](https://drive.google.com/uc?export=view&id=1ziHKFYWAye3kAcvpOo_unlmQPLF36p1V)
 
   
 
@@ -85,7 +85,7 @@
 
   * 컨테이너 오케스트레이션
 
-    ![image-20230125230718205](C:\Users\meteo\AppData\Roaming\Typora\typora-user-images\image-20230125230718205.png)
+    ![TO-BE](https://drive.google.com/uc?export=view&id=14p6q3r0uR3fPL-XklHUe5a42pHHOOXDu)
 
   
 
