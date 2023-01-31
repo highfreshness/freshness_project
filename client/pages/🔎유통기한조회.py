@@ -7,8 +7,7 @@ from datetime import datetime, timedelta
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from component.config import AP_SERVER_URL 
 
-URL = AP_SERVER_URL + "ex_date/"
-# URL = "http://127.0.0.1:8000/ex_date/"
+URL = AP_SERVER_URL + "/ex_date/"
 
 st.title('🔍 유통기한 조회')
 

@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from component.config import AP_SERVER_URL 
-URL = AP_SERVER_URL + "stock/"
+URL = AP_SERVER_URL + "/stock/"
 
 st.title('🔍 입고 조회')
 

@@ -8,7 +8,7 @@ from component.config import AP_SERVER_URL
 
 st.title('📥 출고 처리')
 
-URL = AP_SERVER_URL + "deliver/"
+URL = AP_SERVER_URL + "/deliver/"
 
 qrcode = st.text_input('상품의 QR을 입력해주세요.', max_chars=21)
 barcode = qrcode[:14]

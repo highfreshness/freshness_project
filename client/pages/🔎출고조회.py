@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from component.config import AP_SERVER_URL 
-URL = AP_SERVER_URL + "deliver/"
+URL = AP_SERVER_URL + "/deliver/"
 
 st.title('🔍 출고 조회')
 
