@@ -5,7 +5,8 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from component.config import AP_SERVER_URL 
+from component.config import AP_SERVER_URL
+
 URL = AP_SERVER_URL + "/item/"
 
 st.title('📝 상품 등록')
@@ -31,7 +32,7 @@ if st.button("전송"):
             "item_cat_nm": item_cat_nm,
             "item_maker" : item_maker
         }
-        res = requests.post(url = URL, json=datas)
+        res = requests.post(url = URL, json=datas, timeout=3)
         print(res.json())
         
         print(type(res.json()))
